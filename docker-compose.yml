@@ -1,0 +1,21 @@
+services:
+  mc:
+    image: itzg/minecraft-server
+    ports:
+      - "21024:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: FORGE
+      DEBUG: "TRUE"
+      DIFFICULTY: easy
+      MEMORY: 6G
+      ONLINE_MODE: "FALSE"
+      ENABLE_RCON: "TRUE"
+      ENABLE_COMMAND_BLOCK: "TRUE"
+      #ENABLE_WHITELIST: "TRUE"
+      #WHITELIST_FILE: "./whitelist.json"
+      #EXISTING_WHITELIST_FILE: "SYNCHRONIZE"
+      ALLOW_FLIGHT: "TRUE"
+    volumes:
+      - ./data:/data
+      - ./mods:/mods
